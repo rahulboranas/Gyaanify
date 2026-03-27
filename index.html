@@ -23,59 +23,64 @@
         }
     </script>
 </head>
+
+<!-- ✅ No scroll, full fit -->
 <body class="h-screen w-full relative overflow-hidden font-sans text-white bg-black">
 
+    <!-- Background -->
     <div class="fixed inset-0 z-0 pointer-events-none">
-        <img src="famous.png" alt="Famous Books Background" class="w-full h-full object-cover opacity-100">
-        
-        <div class="absolute inset-0 bg-black/75"></div>
+        <img src="famous.png" alt="Famous Books Background" class="w-full h-full object-cover opacity-80">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/70 to-black/90"></div>
     </div>
 
-    <div class="relative z-10 flex flex-col items-center justify-center min-h-full px-6 py-12 text-center overflow-y-auto">
-        
-        <p class="font-nothing text-base md:text-xl text-neutral-400 mb-6 uppercase tracking-[0.3em]">
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center h-screen px-4 py-6 text-center">
+
+        <p class="font-nothing text-xs md:text-xl text-neutral-400 mb-3 uppercase tracking-[0.3em]">
             Tayari chal rahi hai...
         </p>
         
-        <h1 class="font-nothing text-4xl md:text-6xl font-black mb-16 uppercase leading-loose tracking-[0.1em] md:tracking-[0.2em] drop-shadow-2xl">
-            <span class="text-orange-400 mr-4">Hinglish</span> <span class="text-white">Kitaab</span>
+        <h1 class="font-nothing text-3xl md:text-6xl font-black mb-6 uppercase leading-snug tracking-[0.15em] md:tracking-[0.3em]">
+            <span class="text-orange-400">Hinglish</span> <span class="text-white">Kitaab</span>
             <br/> 
-            <span class="text-blue-400 mr-4">Kranti</span> <span class="text-white">Suru</span>
+            <span class="text-blue-400">Kranti</span> <span class="text-white">Shuru</span>
         </h1>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 font-nothing uppercase mb-16" id="countdown">
+        <!-- Countdown -->
+        <div class="grid grid-cols-4 gap-2 md:gap-6 font-nothing uppercase mb-6 w-full max-w-md">
             
-            <div class="bg-black/60 border border-neutral-700/50 rounded-2xl p-6 md:p-8 shadow-2xl min-w-[140px] md:min-w-[160px] backdrop-blur-sm">
-                <span id="days" class="text-6xl md:text-7xl font-bold text-white tracking-widest">00</span>
-                <span class="block text-sm md:text-lg mt-4 text-neutral-400 font-bold tracking-[0.2em]">Din</span>
+            <div class="bg-black/70 border border-neutral-600 rounded-lg p-3 backdrop-blur-md">
+                <span id="days" class="text-2xl md:text-5xl font-bold">00</span>
+                <span class="block text-[10px] md:text-sm mt-1 text-neutral-400">Din</span>
             </div>
             
-            <div class="bg-black/60 border border-neutral-700/50 rounded-2xl p-6 md:p-8 shadow-2xl min-w-[140px] md:min-w-[160px] backdrop-blur-sm">
-                <span id="hours" class="text-6xl md:text-7xl font-bold text-white tracking-widest">00</span>
-                <span class="block text-sm md:text-lg mt-4 text-neutral-400 font-bold tracking-[0.2em]">Ghante</span>
+            <div class="bg-black/70 border border-neutral-600 rounded-lg p-3 backdrop-blur-md">
+                <span id="hours" class="text-2xl md:text-5xl font-bold">00</span>
+                <span class="block text-[10px] md:text-sm mt-1 text-neutral-400">Ghante</span>
             </div>
             
-            <div class="bg-black/60 border border-neutral-700/50 rounded-2xl p-6 md:p-8 shadow-2xl min-w-[140px] md:min-w-[160px] backdrop-blur-sm">
-                <span id="minutes" class="text-6xl md:text-7xl font-bold text-white tracking-widest">00</span>
-                <span class="block text-sm md:text-lg mt-4 text-neutral-400 font-bold tracking-[0.2em]">Minut</span>
+            <div class="bg-black/70 border border-neutral-600 rounded-lg p-3 backdrop-blur-md">
+                <span id="minutes" class="text-2xl md:text-5xl font-bold">00</span>
+                <span class="block text-[10px] md:text-sm mt-1 text-neutral-400">Min</span>
             </div>
             
-            <div class="bg-black/60 border border-neutral-700/50 rounded-2xl p-6 md:p-8 shadow-2xl min-w-[140px] md:min-w-[160px] backdrop-blur-sm">
-                <span id="seconds" class="text-6xl md:text-7xl font-bold text-blue-400 tracking-widest">00</span>
-                <span class="block text-sm md:text-lg mt-4 text-neutral-400 font-bold tracking-[0.2em]">Second</span>
+            <div class="bg-black/70 border border-neutral-600 rounded-lg p-3 backdrop-blur-md">
+                <span id="seconds" class="text-2xl md:text-5xl font-bold text-blue-400">00</span>
+                <span class="block text-[10px] md:text-sm mt-1 text-neutral-400">Sec</span>
             </div>
         </div>
 
-        <div class="max-w-xl mx-auto bg-black/70 border border-neutral-700/50 rounded-full px-8 py-4 shadow-2xl backdrop-blur-md">
-            <p class="font-sans font-medium text-sm md:text-base text-neutral-200 leading-relaxed tracking-wide">
-                Hum aa rhe hai jaldi... bas aapse dho chij chahiye: pehla trust, or dusra pyaar (jese tum apni girlfriend se karte ho vo wala 😉❤️)
+        <!-- Message -->
+        <div class="max-w-sm bg-black/70 border border-neutral-700 rounded-full px-4 py-2 backdrop-blur-lg">
+            <p class="text-xs md:text-base text-neutral-200 leading-snug">
+                Hum aa rhe hai jaldi... bas trust aur pyaar chahiye 😉❤️
             </p>
         </div>
 
     </div>
 
+    <!-- Countdown Script -->
     <script>
-        // Target Date: 28 May 2026
         const countDownDate = new Date("May 28, 2026 00:00:00").getTime();
 
         const x = setInterval(function() {
@@ -94,7 +99,8 @@
 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "<h2 class='font-nothing text-5xl font-bold text-orange-400 uppercase tracking-tight'>Abhi Live hain!</h2>";
+                document.getElementById("countdown").innerHTML = 
+                    "<h2 class='font-nothing text-3xl md:text-5xl font-bold text-orange-400 uppercase tracking-[0.3em]'>Abhi Live hain!</h2>";
             }
         }, 1000);
     </script>
