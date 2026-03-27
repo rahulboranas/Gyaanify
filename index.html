@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyaanify - Hinglish Kitaab Kranti</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'nothing': ['"DotGothic16"', 'sans-serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="h-screen w-full relative overflow-hidden font-sans text-white bg-black">
+
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <img src="famous.png" alt="Famous Books Background" class="w-full h-full object-cover opacity-100">
+        
+        <div class="absolute inset-0 bg-black/75"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-full px-6 py-12 text-center overflow-y-auto">
+        
+        <p class="font-nothing text-base md:text-xl text-neutral-400 mb-6 uppercase tracking-[0.3em]">
+            Tayari chal rahi hai...
+        </p>
+        
+        <h1 class="font-nothing text-4xl md:text-6xl font-black mb-16 uppercase leading-loose tracking-[0.1em] md:tracking-[0.2em] drop-shadow-2xl">
+            <span class="text-orange-400 mr-4">Hinglish</span> <span class="text-white">Kitaab</span>
+            <br/> 
+            <span class="text-blue-400 mr-4">Kranti</span> <span class="text-white">Suru</span>
+        </h1>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 font-nothing uppercase mb-16" id="countdown">
+            
+            <div class="bg-black/60 border border-neutral-700/50 rounded-2xl p-6 md:p-8 shadow-2xl min-w-[140px] md:min-w-[160px] backdrop-blur-sm">
+                <span id="days" class="text-6xl md:text-7xl font-bold text-white tracking-widest">00</span>
+                <span class="block text-sm md:text-lg mt-4 text-neutral-400 font-bold tracking-[0.2em]">Din</span>
+            </div>
+            
+            <div class="bg-black/60 border border-neutral-700/50 rounded-2xl p-6 md:p-8 shadow-2xl min-w-[140px] md:min-w-[160px] backdrop-blur-sm">
+                <span id="hours" class="text-6xl md:text-7xl font-bold text-white tracking-widest">00</span>
+                <span class="block text-sm md:text-lg mt-4 text-neutral-400 font-bold tracking-[0.2em]">Ghante</span>
+            </div>
+            
+            <div class="bg-black/60 border border-neutral-700/50 rounded-2xl p-6 md:p-8 shadow-2xl min-w-[140px] md:min-w-[160px] backdrop-blur-sm">
+                <span id="minutes" class="text-6xl md:text-7xl font-bold text-white tracking-widest">00</span>
+                <span class="block text-sm md:text-lg mt-4 text-neutral-400 font-bold tracking-[0.2em]">Minut</span>
+            </div>
+            
+            <div class="bg-black/60 border border-neutral-700/50 rounded-2xl p-6 md:p-8 shadow-2xl min-w-[140px] md:min-w-[160px] backdrop-blur-sm">
+                <span id="seconds" class="text-6xl md:text-7xl font-bold text-blue-400 tracking-widest">00</span>
+                <span class="block text-sm md:text-lg mt-4 text-neutral-400 font-bold tracking-[0.2em]">Second</span>
+            </div>
+        </div>
+
+        <div class="max-w-xl mx-auto bg-black/70 border border-neutral-700/50 rounded-full px-8 py-4 shadow-2xl backdrop-blur-md">
+            <p class="font-sans font-medium text-sm md:text-base text-neutral-200 leading-relaxed tracking-wide">
+                Hum aa rhe hai jaldi... bas aapse dho chij chahiye: pehla trust, or dusra pyaar (jese tum apni girlfriend se karte ho vo wala 😉❤️)
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Target Date: 28 May 2026
+        const countDownDate = new Date("May 28, 2026 00:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "<h2 class='font-nothing text-5xl font-bold text-orange-400 uppercase tracking-tight'>Abhi Live hain!</h2>";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
